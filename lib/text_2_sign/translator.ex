@@ -16,7 +16,7 @@ defmodule Text2Sign.Translator do
   @doc """
   The translate/1 function takes a list of
   string type words as argument and returns
-  a list with the video urls for the given 
+  a list with the video urls for the given
   list of words.
 
   ### Example:
@@ -39,7 +39,7 @@ defmodule Text2Sign.Translator do
   defp translate_word(word) do
     case Fetcher.fetch(word) do
       {:ok, url} ->
-        fetch_script(url) |> parse_script
+        {word, fetch_script(url) |> parse_script}
       _ ->
         []
     end
