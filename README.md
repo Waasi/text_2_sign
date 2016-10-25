@@ -9,7 +9,7 @@ https://www.signingsavvy.com/ to translate a list of words to sign language.
 
     ```elixir
     def deps do
-      [{:text_2_sign, git: "https://github.com/Waasi/sign_talk_api"}]
+      [{:text_2_sign, git: "https://github.com/Waasi/text_2_sign"}]
     end
     ```
 
