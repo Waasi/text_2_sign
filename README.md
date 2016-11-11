@@ -15,11 +15,18 @@ https://www.signingsavvy.com/ to translate a list of words to sign language.
 
 ### Usage
 
-##### Text2Sign.Translator Module translate/1
+##### Text2Sign.Translator Module translate/2
 
 ```elixir
-Text2Sign.Translator.translate ["Hello", "World"] # => [hello_sign_video_url, world_sign_video_url]
+Text2Sign.Translator.translate ["Hello", "World"], "english" # => [hello_sign_video_url, world_sign_video_url]
 ```
+
+To use the translator a language must be specified
+as a string argument. Available languages include:
+
+  - english
+  - spanish
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/text_2_sign/fork )

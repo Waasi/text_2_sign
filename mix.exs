@@ -16,7 +16,6 @@ defmodule Text2Sign.Mixfile do
 
   defp deps do
     [{:httpoison, "~> 0.9.0"},
-     {:floki, "~> 0.11.0"},
-     {:mock, "~> 0.2.0", only: :test}]
+     {:floki, "~> 0.11.0"}]
   end
 end

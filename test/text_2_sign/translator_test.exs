@@ -1,20 +1,14 @@
 defmodule Text2Sign.TranslatorTest do
   use ExUnit.Case
 
-  alias Text2Sign.{Translator, Fetcher}
+  alias Text2Sign.Translator
 
-  import Mock
-
-  test ".translate a single word" do
-    with_mock Fetcher, [fetch: fn (_word) -> {:ok, "sign/YAM/8544/1"} end] do
-      assert Translator.translate(["YAM"]) == ["signs/mp4/9/9055.mp4"]
-    end
+  test ".translate a single word in english" do
+    assert Translator.translate(["YAM"], "english") == ["https://www.signingsavvy.com/signs/mp4/9/9055.mp4"]
   end
 
 
-  test ".translate an empty list of words" do
-    with_mock Fetcher, [fetch: fn (_word) -> {:ok, ""} end] do
-      Translator.translate(["WAKAKAA"]) == []
-    end
+  test ".translate an empty list of words in english" do
+    [""] = Translator.translate(["WAKAKAA"], "english")
   end
 end
