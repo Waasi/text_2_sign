@@ -11,11 +11,13 @@ defmodule Text2Sign.Mixfile do
   end
 
   def application do
-    [applications: [:logger, :httpoison]]
+    [applications: [:logger, :httpoison],
+     mod: {Text2Sign, []}]
   end
 
   defp deps do
     [{:httpoison, "~> 0.9.0"},
+     {:poison, "~> 3.0"},
      {:floki, "~> 0.11.0"}]
   end
 end

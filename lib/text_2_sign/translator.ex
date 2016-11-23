@@ -1,7 +1,7 @@
 defmodule Text2Sign.Translator do
   import Rosetta
 
-  languages [:english]
+  languages [:english, :spanish]
 
   @moduledoc """
   The Text2Sign.Translator module allows the fetching
