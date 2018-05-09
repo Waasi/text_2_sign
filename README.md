@@ -7,11 +7,11 @@ https://www.signingsavvy.com/ to translate a list of words to sign language.
 
   1. Add `text_2_sign` to your list of dependencies in `mix.exs`:
 
-    ```elixir
-    def deps do
-      [{:text_2_sign, git: "https://github.com/Waasi/text_2_sign"}]
-    end
-    ```
+```elixir
+def deps do
+  [{:text_2_sign, git: "https://github.com/Waasi/text_2_sign"}]
+end
+```
 
 ### Usage
 
