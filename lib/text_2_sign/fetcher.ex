@@ -2,14 +2,7 @@ defmodule Text2Sign.Fetcher do
   @moduledoc """
   The Text2Sign.Fetcher module allows the fetching
   of the url for the given word.
-
-  ### Functions:
-      - fetch/1
   """
-
-  ######
-  # Public API
-  ######
 
   @doc """
   The fetch/1 function takes a string type
@@ -22,13 +15,15 @@ defmodule Text2Sign.Fetcher do
       {:ok, some_url}
   """
 
-  def fetch(word) do
-    response = HTTPoison.get! "https://www.signingsavvy.com/search/#{word}"
+  def fetch(word, url) do
+    response = HTTPoison.get!("#{url}search/#{word}")
 
-    url = response.body
+    endpoint =
+      response.body
       |> Floki.find("a[href*=#{String.upcase(word)}]")
       |> Floki.attribute("href")
+      |> Enum.at(0)
 
-    {:ok, Enum.at(url, 0)}
+    {:ok, endpoint}
   end
 end
