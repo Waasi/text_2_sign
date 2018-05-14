@@ -1,4 +1,5 @@
 # Text2Sign
+[![Build Status](https://travis-ci.org/Waasi/text_2_sign.svg?branch=master)](https://travis-ci.org/Waasi/text_2_sign)
 
 Text to Sign Language Translator Elixir Library. It uses the resources in
 https://www.signingsavvy.com/ to translate a list of words to sign language.
